@@ -10,6 +10,7 @@ import Typography from '../components/Typography';
 import {colors} from '../Theme';
 import {cars} from '../mocks/cars';
 import {brands} from '../mocks/brands';
+import {useNavigation} from '@react-navigation/native';
 
 function Home() {
   const [search, setSearch]: any = useState();
@@ -17,6 +18,8 @@ function Home() {
   const [car, setCar]: any = useState();
 
   const handleChangeSearch = (event: any) => setSearch(event.target.value);
+
+  const navigation: any = useNavigation();
 
   useEffect(() => {
     setBrand(brands);
@@ -68,6 +71,8 @@ function Home() {
                   transmissionType={car[0].transmissionType}
                   seatsNumber={car[0].seats}
                   fuelType={car[0].fuelType}
+                  handlePressRentNow={undefined}
+                  handlePressDetail={() => navigation.navigate('Car')}
                 />
                 <CarCard
                   key={car[2].id}
@@ -76,6 +81,8 @@ function Home() {
                   transmissionType={car[2].transmissionType}
                   seatsNumber={car[2].seats}
                   fuelType={car[2].fuelType}
+                  handlePressRentNow={undefined}
+                  handlePressDetail={() => navigation.navigate('Car')}
                 />
                 <CarCard
                   key={car[6].id}
@@ -84,6 +91,8 @@ function Home() {
                   transmissionType={car[6].transmissionType}
                   seatsNumber={car[6].seats}
                   fuelType={car[6].fuelType}
+                  handlePressRentNow={undefined}
+                  handlePressDetail={() => navigation.navigate('Car')}
                 />
               </>
             )}

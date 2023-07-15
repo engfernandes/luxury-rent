@@ -3,11 +3,12 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {NavigationContainer} from '@react-navigation/native';
 import Home from './screens/index';
 import {colors} from './Theme';
-import HomeIcon from './assets/icons/Home.svg';
-import DiscoveryIcon from './assets/icons/Discovery.svg';
-import ProfileIcon from './assets/icons/Profile.svg';
+import Icon from 'react-native-vector-icons/MaterialIcons';
+import {createStackNavigator} from '@react-navigation/stack';
+import Car from './screens/car';
 
 const Tab = createBottomTabNavigator();
+const Stack = createStackNavigator();
 
 function Navigation() {
   return (
@@ -28,7 +29,7 @@ function Navigation() {
           component={Home}
           options={{
             tabBarIcon: ({color}: any) => (
-              <HomeIcon fontSize={32} color={color} />
+              <Icon name="home-filled" size={32} color={color} />
             ),
             tabBarLabel: () => null,
           }}
@@ -38,7 +39,7 @@ function Navigation() {
           component={Home}
           options={{
             tabBarIcon: ({color}: any) => (
-              <DiscoveryIcon fontSize={32} color={color} />
+              <Icon name="explore" size={32} color={color} />
             ),
             tabBarLabel: () => null,
           }}
@@ -48,11 +49,12 @@ function Navigation() {
           component={Home}
           options={{
             tabBarIcon: ({color}: any) => (
-              <ProfileIcon fontSize={32} color={color} />
+              <Icon name="person" size={32} color={color} />
             ),
             tabBarLabel: () => null,
           }}
         />
+        <Stack.Screen name="Car" component={Car} />
       </Tab.Navigator>
     </NavigationContainer>
   );

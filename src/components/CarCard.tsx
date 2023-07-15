@@ -10,6 +10,8 @@ interface CarCardProps {
   transmissionType: string;
   seatsNumber: number;
   fuelType: string;
+  handlePressRentNow: any;
+  handlePressDetail: any;
 }
 
 function CarCard({
@@ -18,6 +20,8 @@ function CarCard({
   transmissionType,
   seatsNumber,
   fuelType,
+  handlePressRentNow,
+  handlePressDetail,
 }: CarCardProps) {
   return (
     <View style={styles.card}>
@@ -37,8 +41,16 @@ function CarCard({
         <Typography variant="carDetail" text={fuelType} />
       </View>
       <View style={styles.buttonsContainer}>
-        <Button variant="solid" text="Rent Now" handlePress={undefined} />
-        <Button variant="outlined" text="Detail" handlePress={undefined} />
+        <Button
+          variant="solid"
+          text="Rent Now"
+          handlePress={handlePressRentNow}
+        />
+        <Button
+          variant="outlined"
+          text="Detail"
+          handlePress={handlePressDetail}
+        />
       </View>
     </View>
   );

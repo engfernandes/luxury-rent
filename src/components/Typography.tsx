@@ -3,7 +3,13 @@ import {StyleSheet, Text} from 'react-native';
 import {colors} from '../Theme';
 
 interface TypographyProps {
-  variant: 'title' | 'body' | 'caption' | 'carTitle' | 'carDetail';
+  variant:
+    | 'title'
+    | 'body'
+    | 'caption'
+    | 'carTitle'
+    | 'carDetail'
+    | 'specTitle';
   text: string;
 }
 
@@ -18,8 +24,10 @@ function Typography({variant, text}: TypographyProps) {
         <Text style={styles.caption}>{text}</Text>
       ) : variant === 'carTitle' ? (
         <Text style={styles.carTitle}>{text}</Text>
-      ) : (
+      ) : variant === 'carDetail' ? (
         <Text style={styles.carDetail}>{text}</Text>
+      ) : (
+        <Text style={styles.specTitle}>{text}</Text>
       )}
     </>
   );
@@ -55,6 +63,12 @@ const styles = StyleSheet.create({
     fontFamily: 'Roboto',
     fontSize: 14,
     fontWeight: '400',
+  },
+  specTitle: {
+    color: `${colors.black}`,
+    fontFamily: 'Roboto',
+    fontSize: 12,
+    fontWeight: '700',
   },
 });
 
