@@ -2,6 +2,7 @@ import React from 'react';
 import {View, ScrollView, StyleSheet} from 'react-native';
 import CarDetailedView from '../components/CarDetailedView';
 import IconButton from '../components/IconButton';
+import PlanCard from '../components/PlanCard';
 import SpecCard from '../components/SpecCard';
 import Typography from '../components/Typography';
 import {colors} from '../Theme';
@@ -22,6 +23,10 @@ function Car() {
           <SpecCard title="Power" detail="410hp @6,100rpm" />
           <SpecCard title="Max Speed" detail="280 km/h" />
           <SpecCard title="Power" detail="410hp @6,100rpm" />
+        </ScrollView>
+        <Typography variant="title" text="Plan" />
+        <ScrollView showsVerticalScrollIndicator={false} horizontal={true}>
+          <PlanCard />
         </ScrollView>
       </View>
     </ScrollView>
