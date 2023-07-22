@@ -1,6 +1,7 @@
 import React from 'react';
 import {SafeAreaView, StyleSheet} from 'react-native';
-import Navigation from './src/Navigation';
+import Navigation from './src/BottomNavigation';
+
 function App() {
   return (
     <SafeAreaView style={styles.app}>
